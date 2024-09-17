@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  font-family: "Ubuntu Mono", monospace;
+}
+
+body {
+  background: #11111a !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 !important;
+}
+
+button,
+input,
+textarea {
+  outline: none !important;
+  border: none !important;
+}
+
+.container {
+  padding: 0 !important;
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: white !important;
+  --bs-tooltip-color: black !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #11111a;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f1c1e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #185b33;
+}
