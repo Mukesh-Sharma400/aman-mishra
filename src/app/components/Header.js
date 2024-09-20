@@ -1,62 +1,55 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const pathname = usePathname();
   const { theme } = useSelector(uiState);
-  const [activeSection, setActiveSection] = useState("");
-
-  const sectionData = [
-    { path: "#skills", label: "Skills" },
-    { path: "#projects", label: "Projects" },
-    { path: "#education", label: "Education" },
-    { path: "#experience", label: "Experience" },
-    { path: "#reviews", label: "Reviews" },
-    { path: "#contact", label: "Contact" },
-  ];
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = sectionData.map((section) =>
-        document.querySelector(section.path)
-      );
-      let active = "";
-
-      sections.forEach((section, index) => {
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
-            active = sectionData[index].path;
-          }
-        }
-      });
-
-      setActiveSection(active);
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const sectionData = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/projects", label: "Projects" },
+    { path: "/education", label: "Education" },
+    { path: "/experience", label: "Experience" },
+    { path: "/reviews", label: "Reviews" },
+    { path: "/contact", label: "Contact" },
+  ];
+
   return (
-    <DisplayWrapper>
-      <ContentWrapper>
+    <DisplayWrapper scrolled={scrolled}>
+      <ContentWrapper scrolled={scrolled}>
         <Logo></Logo>
-        <SectionsWrapper>
-          {sectionData.map((section, index) => (
-            <Section
+        <RoutesWrapper>
+          {sectionData.map((route, index) => (
+            <Routes
               key={index}
-              href={section.path}
-              className={activeSection === section.path ? "active" : ""}
+              href={route.path}
+              className={`${
+                pathname === route.path || pathname.startsWith(route.path + "/")
+                  ? "active"
+                  : ""
+              }`}
             >
-              {section.label}
-            </Section>
+              {route.label}
+            </Routes>
           ))}
-        </SectionsWrapper>
+        </RoutesWrapper>
       </ContentWrapper>
     </DisplayWrapper>
   );
@@ -69,6 +62,7 @@ const DisplayWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 10;
+  border-bottom: ${(props) => (props.scrolled ? "1px solid #00FA55" : "none")};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -81,6 +75,7 @@ const ContentWrapper = styled.div`
   background-color: #11111a;
   max-width: 1100px;
   margin: 0 auto;
+  border-bottom: ${(props) => (props.scrolled ? "1px solid #00FA55" : "none")};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -88,14 +83,14 @@ const Logo = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const SectionsWrapper = styled.div`
+const RoutesWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
   transition: all 0.5s ease-in-out;
 `;
 
-const Section = styled.a`
+const Routes = styled(Link)`
   position: relative;
   font-size: 18px;
   text-decoration: none;

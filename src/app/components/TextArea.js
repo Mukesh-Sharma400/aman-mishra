@@ -9,22 +9,10 @@ export const TextArea = ({ type, placeholder, name }) => {
 };
 
 const InputWrapper = styled.div`
-  position: relative;
   width: 100%;
   height: 100px;
+  clip-path: polygon(30px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 30px);
   transition: all 0.5s ease-in-out;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -20px;
-    width: 40px;
-    height: 40px;
-    transform: rotate(45deg);
-    background-color: #0f1c1e;
-  }
 `;
 
 const Input = styled.textarea`
@@ -36,7 +24,7 @@ const Input = styled.textarea`
     theme.currentTheme === "dark"
       ? theme.globalColors.lightGreenColor
       : theme.globalColors.lightGreenColor};
-  background-color: #7b7b8350;
+  background: #313a3e;
   border: none;
   outline: none;
   transition: all 0.5s ease-in-out;

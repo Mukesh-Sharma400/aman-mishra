@@ -121,42 +121,33 @@ const chitchat = keyframes`
 `;
 
 const StyledButton = styled.button`
-  position: relative;
   width: 100%;
   height: 50px;
   font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
   color: ${({ theme }) =>
     theme.currentTheme === "dark"
       ? theme.globalColors.lightGreenColor
       : theme.globalColors.lightGreenColor};
-  background-color: #7b7b8350;
+  background: #313a3e;
+  transition: 0.3s;
+  overflow: hidden;
+  clip-path: polygon(30px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 30px);
 
   span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
     transition: 0.3s;
-    box-sizing: border-box;
     position: relative;
+    background: inherit;
   }
 
   span::before {
-    box-sizing: border-box;
     position: absolute;
     content: "";
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -20px;
-    width: 40px;
-    height: 40px;
-    transform: rotate(45deg);
-    background-color: #0f1c1e;
+    background: inherit;
   }
 
   &:hover span::before,
