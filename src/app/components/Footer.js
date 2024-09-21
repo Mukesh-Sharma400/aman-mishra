@@ -36,10 +36,7 @@ const DisplayWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1100px) {
-    padding: 50px 50px;
-  }
-  @media (max-width: 376px) {
-    padding: 50px 0px;
+    padding: 50px 10px;
   }
 `;
 
