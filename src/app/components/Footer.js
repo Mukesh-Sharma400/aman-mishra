@@ -34,6 +34,13 @@ const DisplayWrapper = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 1100px) {
+    padding: 50px 50px;
+  }
+  @media (max-width: 376px) {
+    padding: 50px 0px;
+  }
 `;
 
 const BottomWrapper = styled.div`

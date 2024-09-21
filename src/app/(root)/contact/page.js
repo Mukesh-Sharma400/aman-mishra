@@ -73,6 +73,11 @@ const EmailNumberWrapper = styled.div`
   gap: 1rem;
   margin: 30px 0px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 const SmallNotchedBox = styled.div`

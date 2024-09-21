@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SideMenu } from "./SideMenu";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
@@ -9,6 +10,7 @@ export const Header = () => {
   const pathname = usePathname();
   const { theme } = useSelector(uiState);
   const [scrolled, setScrolled] = useState(false);
+  const [sideMenuOpened, setSideMenuOpened] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +23,11 @@ export const Header = () => {
     };
   }, []);
 
-  const sectionData = [
+  const handleSideMenu = () => {
+    setSideMenuOpened(!sideMenuOpened);
+  };
+
+  const routesData = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/projects", label: "Projects" },
@@ -32,26 +38,38 @@ export const Header = () => {
   ];
 
   return (
-    <DisplayWrapper scrolled={scrolled}>
-      <ContentWrapper scrolled={scrolled}>
-        <Logo></Logo>
-        <RoutesWrapper>
-          {sectionData.map((route, index) => (
-            <Routes
-              key={index}
-              href={route.path}
-              className={`${
-                pathname === route.path || pathname.startsWith(route.path + "/")
-                  ? "active"
-                  : ""
-              }`}
-            >
-              {route.label}
-            </Routes>
-          ))}
-        </RoutesWrapper>
-      </ContentWrapper>
-    </DisplayWrapper>
+    <>
+      <DisplayWrapper scrolled={scrolled}>
+        <ContentWrapper scrolled={scrolled}>
+          <Logo></Logo>
+          <RoutesWrapper>
+            {routesData.map((route, index) => (
+              <Routes
+                key={index}
+                href={route.path}
+                className={`${
+                  pathname === route.path ||
+                  pathname.startsWith(route.path + "/")
+                    ? "active"
+                    : ""
+                }`}
+              >
+                {route.label}
+              </Routes>
+            ))}
+          </RoutesWrapper>
+          <Button onClick={handleSideMenu} sideMenuOpened={sideMenuOpened}>
+            <div className="bar bar--1"></div>
+            <div className="bar bar--2"></div>
+            <div className="bar bar--3"></div>
+          </Button>
+        </ContentWrapper>
+      </DisplayWrapper>
+      <SideMenu
+        sideMenuOpened={sideMenuOpened}
+        setSideMenuOpened={setSideMenuOpened}
+      />
+    </>
   );
 };
 
@@ -61,9 +79,13 @@ const DisplayWrapper = styled.div`
   background-color: #11111a;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 2;
   border-bottom: ${(props) => (props.scrolled ? "1px solid #00FA55" : "none")};
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 1100px) {
+    padding: 0px 50px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -88,6 +110,10 @@ const RoutesWrapper = styled.div`
   align-items: center;
   gap: 1rem;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Routes = styled(Link)`
@@ -132,4 +158,65 @@ const Routes = styled(Link)`
           : theme.globalColors.lightGreenColor};
     }
   }
+`;
+
+const Button = styled.button`
+  padding: 0;
+  --gap: 5px;
+  --height-bar: 3px;
+  --pos-y-bar-one: 0;
+  --pos-y-bar-three: 0;
+  --scale-bar: 1;
+  --rotate-bar-one: 0;
+  --rotate-bar-three: 0;
+
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  width: 35px;
+  min-width: 35px;
+  max-width: 35px;
+  flex-direction: column;
+  gap: var(--gap);
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+
+  .bar {
+    position: relative;
+    height: var(--height-bar);
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: #00fa55;
+  }
+
+  .bar--1 {
+    top: var(--pos-y-bar-one);
+    transform: rotate(var(--rotate-bar-one));
+    transition: top 200ms 100ms, transform 100ms;
+  }
+
+  .bar--2 {
+    transform: scaleX(var(--scale-bar));
+    transition: transform 150ms 100ms;
+  }
+
+  .bar--3 {
+    bottom: var(--pos-y-bar-three);
+    transform: rotate(var(--rotate-bar-three));
+    transition: bottom 200ms 100ms, transform 100ms;
+  }
+
+  ${(props) =>
+    props.sideMenuOpened &&
+    `
+    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+    --scale-bar: 0;
+    --rotate-bar-one: 45deg;
+    --rotate-bar-three: -45deg;
+  `}
 `;
