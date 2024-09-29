@@ -50,6 +50,7 @@ const IntroWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 600px) {
+    gap: 20px;
     flex-direction: column-reverse;
   }
 `;
