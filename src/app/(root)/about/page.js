@@ -25,12 +25,7 @@ export default function About() {
               foundation in Python programming, I'm proficient in scripting
               automated tasks, analyzing malware, and developing innovative
               security solutions. I'm committed to staying ahead of emerging
-              threats and contributing to a more secure digital landscape. Lorem
-              ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
-              eius sit magnam enim repellendus non cupiditate, necessitatibus
-              odio, accusantium quae voluptate, earum ut modi. Perferendis enim
-              rerum distinctio alias id? Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit.
+              threats and contributing to a more secure digital landscape.
             </MyStory>
           </DetailsWrapper>
           <ImageWrapper>
@@ -50,7 +45,7 @@ const DisplayWrapper = styled.div`
 const IntroWrapper = styled.div`
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 50px;
   margin-top: 30px;
   transition: all 0.5s ease-in-out;
 
@@ -60,7 +55,7 @@ const IntroWrapper = styled.div`
 `;
 
 const DetailsWrapper = styled.div`
-  width: 70%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -111,7 +106,7 @@ const MyStory = styled.p`
 `;
 
 const ImageWrapper = styled.div`
-  width: 30%;
+  width: 25%;
   height: fit-content;
   margin: 0 auto;
   position: relative;
@@ -120,9 +115,9 @@ const ImageWrapper = styled.div`
   &::before {
     content: "";
     position: absolute;
-    margin: -50px;
-    width: 100px;
-    height: 100px;
+    margin: -40px;
+    width: 80px;
+    height: 80px;
     transform: rotate(45deg);
     background-color: #00fa55;
     z-index: 1;
@@ -133,9 +128,9 @@ const ImageWrapper = styled.div`
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: -50px;
-    width: 100px;
-    height: 100px;
+    margin: -40px;
+    width: 80px;
+    height: 80px;
     transform: rotate(45deg);
     background-color: #00fa55;
   }
