@@ -58,10 +58,10 @@ export default function Education() {
                 </LeftSide>
                 <RightSide>
                   <EducationName>
-                    {education.degree} <span>({education.period})</span>
+                    {education.degree} <span>[{education.period}]</span>
                   </EducationName>
                   <College>
-                    {education.college} <span>({education.location})</span>
+                    {education.college} <span>[{education.location}]</span>
                   </College>
                   <Content>{education.content}</Content>
                 </RightSide>

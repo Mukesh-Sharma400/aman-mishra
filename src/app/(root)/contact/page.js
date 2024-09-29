@@ -47,7 +47,7 @@ export default function Contact() {
       <DisplayWrapper>
         <PageHeading heading="Contact" />
         <EmailNumberWrapper>
-          <SmallNotchedBox>
+          <SmallNotchedBox data-aos="fade-up">
             <NumberWrapper>
               <div>
                 <Title>+91 9834248447</Title>
@@ -58,7 +58,7 @@ export default function Contact() {
               </CopyBtn>
             </NumberWrapper>
           </SmallNotchedBox>
-          <SmallNotchedBox>
+          <SmallNotchedBox data-aos="fade-up">
             <EmailWrapper>
               <div>
                 <Title>amanpavanmishra10@gmail.com</Title>
@@ -70,7 +70,7 @@ export default function Contact() {
             </EmailWrapper>
           </SmallNotchedBox>
         </EmailNumberWrapper>
-        <NotchedBox>
+        <NotchedBox data-aos="fade-up">
           <FormContainer>
             <Heading>Send a message</Heading>
             <FormWrapper>

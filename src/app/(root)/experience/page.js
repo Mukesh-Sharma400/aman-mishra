@@ -68,10 +68,10 @@ export default function Experience() {
                 </LeftSide>
                 <RightSide>
                   <CompanyName>
-                    {experience.company} <span>({experience.period})</span>
+                    {experience.company} <span>[{experience.period}]</span>
                   </CompanyName>
                   <Role>
-                    {experience.role} <span>({experience.location})</span>
+                    {experience.role} <span>[{experience.location}]</span>
                   </Role>
                   <Content>{experience.content}</Content>
                 </RightSide>
