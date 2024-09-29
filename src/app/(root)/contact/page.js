@@ -1,40 +1,75 @@
 "use client";
 
+import copy from "clipboard-copy";
+import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { uiState } from "@/app/redux/uiSlice";
+import { Toast } from "@/app/components/Toast";
 import { TextBox } from "@/app/components/TextBox";
 import { TextArea } from "@/app/components/TextArea";
 import BaseLayout from "@/app/components/BaseLayout";
 import styled, { keyframes } from "styled-components";
 import { PageHeading } from "@/app/components/PageHeading";
-import { PrimaryButton } from "@/app/components/PrimaryButton";
-import { SecondaryButton } from "@/app/components/SecondaryButton";
 
 export default function Contact() {
+  const timeoutRef = useRef(null);
+  const phoneNumber = "+919834248447";
   const { theme } = useSelector(uiState);
+  const emailAddress = "amanpavanmishra10@gmail.com";
+  const [toast, setToast] = useState({ visible: false, message: "" });
+
+  const showToastMethod = (message) => {
+    setToast({ visible: true, message });
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setToast({ visible: false, message: "" });
+    }, 3000);
+  };
+
+  const handleOpenDialer = () => {
+    const telUrl = `tel:${phoneNumber}`;
+    window.location.href = telUrl;
+  };
+
+  const handleCopyEmail = () => {
+    const emailToCopy = `${emailAddress}`;
+    copy(emailToCopy);
+    showToastMethod("Email copied to clipboard");
+  };
 
   return (
     <BaseLayout>
+      <ToastWrapper showToast={toast.visible}>
+        <Toast message={toast.message} />
+      </ToastWrapper>
       <DisplayWrapper>
         <PageHeading heading="Contact" />
         <EmailNumberWrapper>
           <SmallNotchedBox>
             <NumberWrapper>
-              <Title>+91 9834248447</Title>
-              <SubTitle>Phone</SubTitle>
+              <div>
+                <Title>+91 9834248447</Title>
+                <SubTitle>- Phone</SubTitle>
+              </div>
+              <CopyBtn onClick={handleOpenDialer}>
+                <i class="bi bi-telephone"></i>
+              </CopyBtn>
             </NumberWrapper>
           </SmallNotchedBox>
           <SmallNotchedBox>
             <EmailWrapper>
-              <Title>amanpavanmishra10@gmail.com</Title>
-              <SubTitle>Email</SubTitle>
+              <div>
+                <Title>amanpavanmishra10@gmail.com</Title>
+                <SubTitle>- Email</SubTitle>
+              </div>
+              <CopyBtn onClick={handleCopyEmail}>
+                <i class="bi bi-copy"></i>
+              </CopyBtn>
             </EmailWrapper>
           </SmallNotchedBox>
         </EmailNumberWrapper>
-        {/* <ButtonsWrapper>
-          <PrimaryButton text="Call Me" />
-          <SecondaryButton text="Copy Email" />
-        </ButtonsWrapper> */}
         <NotchedBox>
           <FormContainer>
             <Heading>Send a message</Heading>
@@ -59,6 +94,15 @@ export default function Contact() {
     </BaseLayout>
   );
 }
+
+const ToastWrapper = styled.div`
+  position: fixed;
+  top: ${(props) => (props.showToast ? "7%" : "-20%")};
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+`;
 
 const DisplayWrapper = styled.div`
   width: 100%;
@@ -100,6 +144,9 @@ const SmallNotchedBox = styled.div`
 
 const EmailWrapper = styled.div`
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px;
   background-color: #0f1c1e;
   border: 1px solid
@@ -113,6 +160,9 @@ const EmailWrapper = styled.div`
 
 const NumberWrapper = styled.div`
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px;
   background-color: #0f1c1e;
   border: 1px solid
@@ -131,6 +181,10 @@ const Title = styled.p`
       ? theme.globalColors.whiteColor
       : theme.globalColors.whiteColor};
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 460px) {
+    font-size: 20px;
+  }
 `;
 
 const SubTitle = styled.p`
@@ -142,9 +196,37 @@ const SubTitle = styled.p`
   transition: all 0.5s ease-in-out;
 `;
 
-const ButtonsWrapper = styled.div`
-  width: 100%;
-  margin: 80px 0;
+const CopyBtn = styled.button`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: transparent;
+  border-radius: 5px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "dark"
+      ? theme.globalColors.mediumGreenColor
+      : theme.globalColors.mediumGreenColor};
+  border: 1px solid
+    ${({ theme }) =>
+      theme.currentTheme === "dark"
+        ? theme.globalColors.mediumGreenColor
+        : theme.globalColors.mediumGreenColor} !important;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) =>
+      theme.currentTheme === "dark"
+        ? theme.globalColors.lightGreenColor
+        : theme.globalColors.lightGreenColor};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.currentTheme === "dark"
+          ? theme.globalColors.lightGreenColor
+          : theme.globalColors.lightGreenColor} !important;
+  }
 `;
 
 const NotchedBox = styled.div`
