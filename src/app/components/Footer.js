@@ -51,10 +51,6 @@ const BottomWrapper = styled.div`
       : theme.globalColors.darkGrayColor};
   transition: all 0.5s ease-in-out;
 
-  @media (max-width: 768px) {
-    font-size: 13px;
-  }
-
   @media (max-width: 600px) {
     flex-direction: column;
     gap: 10px;
