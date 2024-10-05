@@ -22,14 +22,31 @@ export default function About() {
     "Intrusion Detection & Prevention Systems",
   ];
 
+  const interests = [
+    "Cybersecurity Trends",
+    "Ethical Hacking",
+    "Data Privacy",
+    "Cryptography",
+    "Digital Forensics",
+    "Blockchain Technology",
+    "Cloud Security",
+    "Threat Hunting",
+    "Malware Analysis",
+    "Security Automation",
+  ];
+
+  const languages = ["English", "Hindi", "Marathi"];
+
   return (
     <BaseLayout>
       <DisplayWrapper>
         <PageHeading heading="About" />
         <IntroWrapper>
           <DetailsWrapper>
-            <MyName>Aman Mishra</MyName>
-            <MyDesc>Cybersecurity Analyst</MyDesc>
+            <MyName data-aos="fade-right">Aman Mishra</MyName>
+            <MyDesc data-aos="fade-right" data-aos-delay="100">
+              Cybersecurity Analyst
+            </MyDesc>
             <MyStory>
               <span>
                 I'm Aman Mishra, a dedicated cybersecurity professional with a
@@ -44,15 +61,50 @@ export default function About() {
             </MyStory>
           </DetailsWrapper>
           <ImageWrapper>
-            <ProfilePicture src={profilePicture} alt="Aman Mishra" />
+            <ProfilePicture
+              src={profilePicture}
+              alt="Aman Mishra"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            />
           </ImageWrapper>
         </IntroWrapper>
         <SectionHeading>Skills</SectionHeading>
-        <SkillsWrapper>
+        <ItemsWrapper>
           {skills.map((skill, index) => (
-            <Skill key={index}>{skill}</Skill>
+            <Item
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${(index + 1) * 100}`}
+            >
+              {skill}
+            </Item>
           ))}
-        </SkillsWrapper>
+        </ItemsWrapper>
+        <SectionHeading>Interests</SectionHeading>
+        <ItemsWrapper>
+          {interests.map((interest, index) => (
+            <Item
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${(index + 1) * 100}`}
+            >
+              {interest}
+            </Item>
+          ))}
+        </ItemsWrapper>
+        <SectionHeading>Languages</SectionHeading>
+        <ItemsWrapper>
+          {languages.map((language, index) => (
+            <Item
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${(index + 1) * 100}`}
+            >
+              {language}
+            </Item>
+          ))}
+        </ItemsWrapper>
       </DisplayWrapper>
     </BaseLayout>
   );
@@ -61,6 +113,7 @@ export default function About() {
 const DisplayWrapper = styled.div`
   width: 100%;
   margin-top: 80px;
+  margin-bottom: 30px;
 `;
 
 const IntroWrapper = styled.div`
@@ -184,23 +237,24 @@ const SectionHeading = styled.p`
       : theme.globalColors.mediumGreenColor};
 `;
 
-const SkillsWrapper = styled.div`
+const ItemsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 `;
 
-const Skill = styled.div`
+const Item = styled.div`
   width: fit-content;
-  height: 50px;
+  height: 40px;
   background: #313a3e;
-  font-size: 17px;
-  padding: 10px 10px 10px 35px;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 10px 10px 10px 25px;
   color: ${({ theme }) =>
     theme.currentTheme === "dark"
       ? theme.globalColors.lightGreenColor
       : theme.globalColors.lightGreenColor};
-  clip-path: polygon(30px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 30px);
+  clip-path: polygon(20px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 20px);
   transition: all 0.5s ease-in-out;
 `;
