@@ -7,6 +7,21 @@ import { PageHeading } from "@/app/components/PageHeading";
 import profilePicture from "../../../../public/assets/me.jpg";
 
 export default function About() {
+  const skills = [
+    "Network Security",
+    "Security Auditing",
+    "Incident Response",
+    "Firewall Management",
+    "Penetration Testing",
+    "Encryption Techniques",
+    "Regulatory Compliance",
+    "Vulnerability Assessment",
+    "Cyber Threat Intelligence",
+    "Risk Assessment & Management",
+    "Security Information & Event Management",
+    "Intrusion Detection & Prevention Systems",
+  ];
+
   return (
     <BaseLayout>
       <DisplayWrapper>
@@ -32,6 +47,12 @@ export default function About() {
             <ProfilePicture src={profilePicture} alt="Aman Mishra" />
           </ImageWrapper>
         </IntroWrapper>
+        <SectionHeading>Skills</SectionHeading>
+        <SkillsWrapper>
+          {skills.map((skill, index) => (
+            <Skill key={index}>{skill}</Skill>
+          ))}
+        </SkillsWrapper>
       </DisplayWrapper>
     </BaseLayout>
   );
@@ -152,4 +173,34 @@ const ProfilePicture = styled(Image)`
         ? theme.globalColors.lightGreenColor
         : theme.globalColors.lightGreenColor};
   clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+`;
+
+const SectionHeading = styled.p`
+  font-size: 40px;
+  margin-top: 30px !important;
+  color: ${({ theme }) =>
+    theme.currentTheme === "dark"
+      ? theme.globalColors.mediumGreenColor
+      : theme.globalColors.mediumGreenColor};
+`;
+
+const SkillsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
+
+const Skill = styled.div`
+  width: fit-content;
+  height: 50px;
+  background: #313a3e;
+  font-size: 17px;
+  padding: 10px 10px 10px 35px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "dark"
+      ? theme.globalColors.lightGreenColor
+      : theme.globalColors.lightGreenColor};
+  clip-path: polygon(30px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 30px);
+  transition: all 0.5s ease-in-out;
 `;
