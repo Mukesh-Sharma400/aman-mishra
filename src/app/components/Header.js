@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SideMenu } from "./SideMenu";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import logo from "../../../public/assets/logo.png";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -41,7 +43,7 @@ export const Header = () => {
     <>
       <DisplayWrapper scrolled={scrolled}>
         <ContentWrapper scrolled={scrolled}>
-          <Logo></Logo>
+          <Logo src={logo} alt="Aman Mishra" />
           <RoutesWrapper>
             {routesData.map((route, index) => (
               <Routes
@@ -101,7 +103,9 @@ const ContentWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const Logo = styled.div`
+const Logo = styled(Image)`
+  width: 60px;
+  height: 60px;
   transition: all 0.5s ease-in-out;
 `;
 
