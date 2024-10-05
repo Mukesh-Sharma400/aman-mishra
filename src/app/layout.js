@@ -5,7 +5,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata = {
-  title: "Aman Mishra - Cybersecurity Analyst",
+  title: "Aman Mishra | Cybersecurity Analyst",
   description:
     "Aman Mishra, a skilled Cybersecurity Analyst, specialized in risk management, network security, and threat analysis, ensuring top-level data protection and secure systems.",
   keywords:
@@ -18,7 +18,7 @@ export const metadata = {
   ogDescription:
     "Discover Aman Mishra's expertise in Cybersecurity, ensuring secure networks, ethical hacking, and proactive threat defense strategies.",
   ogImage: "./icon.png",
-  twitterTitle: "Aman Mishra - Cybersecurity Specialist",
+  twitterTitle: "Aman Mishra | Cybersecurity Specialist",
   twitterDescription:
     "Explore Aman Mishra's skills in safeguarding systems through risk management, encryption, and vulnerability assessment.",
   twitterImage: "./icon.png",
