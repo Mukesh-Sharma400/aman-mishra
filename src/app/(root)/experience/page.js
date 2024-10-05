@@ -4,51 +4,22 @@ import Image from "next/image";
 import styled from "styled-components";
 import BaseLayout from "@/app/components/BaseLayout";
 import { PageHeading } from "@/app/components/PageHeading";
-import profilePicture from "../../../../public/assets/me.jpg";
 
 export default function Experience() {
-  const experiencesData = [
-    {
-      company: "Playerzpot Media Pvt Ltd",
-      imageSrc: profilePicture,
-      alt: "Playerzpot Media Pvt Ltd",
-      period: "May 2024 - Present",
-      role: "SDE 1 - Nodejs",
-      location: "Vashi",
-      content:
-        "As an SDE 1 - Node.js at Playerzpot Media Pvt Ltd, I am involved in backend development using Node.js. My responsibilities include designing and implementing APIs, optimizing server performance, and ensuring the reliability of server-side applications. I engage in code reviews, and contribute to improving our development processes.",
-    },
-    {
-      company: "AppAvengers Labs Pvt Ltd",
-      imageSrc: profilePicture,
-      alt: "AppAvengers Labs Pvt Ltd",
-      period: "July 2023 - April 2024",
-      role: "Junior Web Developer",
-      location: "Remote",
-      content:
-        "As a Junior Web Developer at AppAvengers Labs Pvt Ltd, I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
-    },
-    {
-      company: "NullClass",
-      imageSrc: profilePicture,
-      alt: "NullClass",
-      period: "December 2022 - January 2023",
-      role: "Project Intern",
-      location: "Remote",
-      content:
-        "As a NullClass Project Intern, I created a responsive MERN Stack app (Stack Overflow Clone) and added features like a chat bot and community section. I gained valuable experience in React, Node.js, Express.js, and MongoDB, improving my skills in building scalable and user-centric web applications.",
-    },
-    {
-      company: "Hasbasoft Technology Pvt Ltd",
-      imageSrc: profilePicture,
-      alt: "Hasbasoft Technology Pvt Ltd",
-      period: "August 2021 - October 2022",
-      role: "MERN Stack Software Trainee",
-      location: "Online",
-      content:
-        "As a Software Trainee at Hasbasoft Technology Pvt Ltd, I built several MERN Stack applications, including an Ecommerce platform. Through hands-on experience, I gained expertise in React, Node.js, Express.js, and MongoDB, developing dynamic and user-friendly web solutions in a professional software development environment.",
-    },
-  ];
+  const experiencesData = [];
+
+  // const experiencesData = [
+  //   {
+  //     company: "Playerzpot Media Pvt Ltd",
+  //     imageSrc: profilePicture,
+  //     alt: "Playerzpot Media Pvt Ltd",
+  //     period: "May 2024 - Present",
+  //     role: "SDE 1 - Nodejs",
+  //     location: "Vashi",
+  //     content:
+  //       "As an SDE 1 - Node.js at Playerzpot Media Pvt Ltd, I am involved in backend development using Node.js. My responsibilities include designing and implementing APIs, optimizing server performance, and ensuring the reliability of server-side applications. I engage in code reviews, and contribute to improving our development processes.",
+  //   },
+  // ];
 
   return (
     <BaseLayout>
