@@ -3,40 +3,42 @@
 import Image from "next/image";
 import styled from "styled-components";
 import BaseLayout from "@/app/components/BaseLayout";
+import dmwa from "../../../../public/assets/dmwa.jpeg";
+import marys from "../../../../public/assets/marys.jpeg";
+import pillai from "../../../../public/assets/pillai.jpg";
 import { PageHeading } from "@/app/components/PageHeading";
-import profilePicture from "../../../../public/assets/me.jpg";
 
 export default function Education() {
   const educationsData = [
     {
-      degree: "Bachelors in Information Technology",
-      imageSrc: profilePicture,
-      alt: "Sanpada College of Commerce & Technology",
-      period: "September 2020 - May 2023",
-      college: "Sanpada College of Commerce & Technology",
-      location: "Sanpada, Navi Mumbai",
+      degree: "Bachelors in Computer Science",
+      imageSrc: pillai,
+      alt: "Pillai College of Arts, Commerce and Science",
+      period: "September 2021 - May 2024",
+      college: "Pillai College of Arts, Commerce and Science",
+      location: "Panvel, Navi Mumbai",
       content:
-        "I always had a passion for web development and acquired skills in various web technologies. I have created many websites, which impressed all my colleagues and professors. I became a sought-after web developer, proving that hard work and dedication can lead to success.",
+        "During my Bachelor's in Computer Science, I gained a solid foundation in software development, algorithms, and data structures. I worked on multiple projects including a full-stack web application and an AI-based recommendation system. I also led a team in a hackathon, where we secured second place for developing a smart traffic management solution.",
     },
     {
       degree: "Higher School Certification",
-      imageSrc: profilePicture,
-      alt: "Pace Education Society",
-      period: "June 2016 - May 2018",
-      college: "Pace Education Society",
-      location: "Nerul, Navi Mumbai",
+      imageSrc: marys,
+      alt: "St. Mary's College",
+      period: "June 2019 - May 2021",
+      college: "St. Mary's College",
+      location: "Vashi, Navi Mumbai",
       content:
-        "I was always fascinated by the mysteries of the universe. Despite not being the smartest student in my class, I spend every free moment delving into books and videos on cosmology and astrophysics.",
+        "At St. Mary's College, I developed a strong understanding of mathematics and computer science fundamentals. I participated in various coding competitions and was an active member of the college’s tech club. My passion for software development was ignited during this time, leading me to explore programming languages like Python and JavaScript.",
     },
     {
       degree: "Secondary School Certification",
-      imageSrc: profilePicture,
-      alt: "Tilak International School",
-      period: "June 2015 - March 2016",
-      college: "Tilak International School",
-      location: "Ghansoli, Navi Mumbai",
+      imageSrc: dmwa,
+      alt: "Smt. Radhikabai Meghe Vidyalaya",
+      period: "June 2017 - March 2019",
+      college: "Smt. Radhikabai Meghe Vidyalaya",
+      location: "Airoli, Navi Mumbai",
       content:
-        "I always had a keen interest in computers and technology. I used to participate in a school computer science competition despite my lack of confidence. I studied hard, boosting my confidence and setting me on a path towards a successful career in technology.",
+        "In high school, I built a strong foundation in the sciences, particularly in mathematics and computer studies. I was a consistent top performer in my class and received recognition for my project on 'Automation in Everyday Life'. This phase solidified my interest in pursuing a career in technology.",
     },
   ];
 
@@ -143,14 +145,14 @@ const EducationImage = styled(Image)`
   left: 50%;
   transform: translate(-50%, -50%) !important;
   clip-path: polygon(
-    30% 0%,
-    70% 0%,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0% 70%,
-    0% 30%
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
   );
   transition: all 0.5s ease-in-out;
 
