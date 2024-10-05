@@ -114,6 +114,7 @@ const DisplayWrapper = styled.div`
   width: 100%;
   margin-top: 80px;
   margin-bottom: 30px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const IntroWrapper = styled.div`
@@ -186,6 +187,7 @@ const ImageWrapper = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";
@@ -226,6 +228,7 @@ const ProfilePicture = styled(Image)`
         ? theme.globalColors.lightGreenColor
         : theme.globalColors.lightGreenColor};
   clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  transition: all 0.5s ease-in-out;
 `;
 
 const SectionHeading = styled.p`
@@ -235,6 +238,7 @@ const SectionHeading = styled.p`
     theme.currentTheme === "dark"
       ? theme.globalColors.mediumGreenColor
       : theme.globalColors.mediumGreenColor};
+  transition: all 0.5s ease-in-out;
 `;
 
 const ItemsWrapper = styled.div`
@@ -242,6 +246,7 @@ const ItemsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const Item = styled.div`

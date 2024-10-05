@@ -7,9 +7,9 @@ import { PageHeading } from "../components/PageHeading";
 export default function Home() {
   return (
     <BaseLayout>
-     <DisplayWrapper>
-      <PageHeading heading="Home" />
-     </DisplayWrapper>
+      <DisplayWrapper>
+        <PageHeading heading="Home" />
+      </DisplayWrapper>
     </BaseLayout>
   );
 }
@@ -17,4 +17,5 @@ export default function Home() {
 const DisplayWrapper = styled.div`
   width: 100%;
   margin-top: 80px;
+  transition: all 0.5s ease-in-out;
 `;

@@ -15,6 +15,7 @@ const NotchedBox = styled.div`
   background-color: #0f1c1e;
   overflow: hidden;
   margin-top: 50px;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";
@@ -46,4 +47,5 @@ const Heading = styled.p`
     theme.currentTheme === "dark"
       ? theme.globalColors.lightGreenColor
       : theme.globalColors.lightGreenColor};
+  transition: all 0.5s ease-in-out;
 `;

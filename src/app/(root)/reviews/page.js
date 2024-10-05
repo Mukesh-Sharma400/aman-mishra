@@ -102,6 +102,7 @@ export default function Reviews() {
 const DisplayWrapper = styled.div`
   width: 100%;
   margin-top: 80px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const ReviewsWrapper = styled.div`
@@ -119,6 +120,7 @@ const NotchedBox = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";

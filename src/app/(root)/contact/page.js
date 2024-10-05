@@ -107,6 +107,7 @@ const ToastWrapper = styled.div`
 const DisplayWrapper = styled.div`
   width: 100%;
   margin-top: 80px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const EmailNumberWrapper = styled.div`
@@ -130,6 +131,7 @@ const SmallNotchedBox = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";
@@ -235,6 +237,7 @@ const NotchedBox = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";
@@ -266,6 +269,7 @@ const FormContainer = styled.div`
     0 100%,
     0 70px
   );
+  transition: all 0.5s ease-in-out;
 `;
 
 const Heading = styled.p`
@@ -276,6 +280,7 @@ const Heading = styled.p`
     theme.currentTheme === "dark"
       ? theme.globalColors.lightGreenColor
       : theme.globalColors.lightGreenColor};
+  transition: all 0.5s ease-in-out;
 `;
 
 const FormWrapper = styled.form`
@@ -284,6 +289,7 @@ const FormWrapper = styled.form`
   flex-direction: column;
   gap: 2rem;
   padding: 50px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const NameEmailWrapper = styled.div`
@@ -291,6 +297,7 @@ const NameEmailWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
+  transition: all 0.5s ease-in-out;
 
   @media (max-width: 768px) {
     flex-direction: column;

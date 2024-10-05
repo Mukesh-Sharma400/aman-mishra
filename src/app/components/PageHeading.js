@@ -40,6 +40,7 @@ const NotchedBox = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";

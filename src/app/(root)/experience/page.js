@@ -58,6 +58,7 @@ export default function Experience() {
 const DisplayWrapper = styled.div`
   width: 100%;
   margin-top: 80px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const ExperiencesWrapper = styled.div`
@@ -66,6 +67,7 @@ const ExperiencesWrapper = styled.div`
   flex-direction: column;
   gap: 30px;
   margin-top: 30px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const SmallNotchedBox = styled.div`
@@ -74,6 +76,7 @@ const SmallNotchedBox = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";
@@ -133,6 +136,12 @@ const CompanyImage = styled(Image)`
     0% 70%,
     0% 30%
   );
+  padding: 5px;
+  border: 2px solid
+    ${({ theme }) =>
+      theme.currentTheme === "dark"
+        ? theme.globalColors.lightGreenColor
+        : theme.globalColors.lightGreenColor};
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 600px) {
@@ -158,6 +167,7 @@ const CompanyName = styled.p`
       ? theme.globalColors.whiteColor
       : theme.globalColors.whiteColor};
   transition: all 0.5s ease-in-out;
+
   span {
     color: ${({ theme }) =>
       theme.currentTheme === "dark"
@@ -174,6 +184,7 @@ const Role = styled.p`
       ? theme.globalColors.whiteColor
       : theme.globalColors.whiteColor};
   transition: all 0.5s ease-in-out;
+
   span {
     color: ${({ theme }) =>
       theme.currentTheme === "dark"
