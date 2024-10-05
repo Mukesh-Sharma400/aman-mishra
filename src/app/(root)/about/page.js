@@ -9,17 +9,19 @@ import profilePicture from "../../../../public/assets/me.jpg";
 export default function About() {
   const skills = [
     "Network Security",
+    "Event Management",
     "Security Auditing",
     "Incident Response",
-    "Firewall Management",
+    "Prevention Systems",
+    "Intrusion Detection",
     "Penetration Testing",
+    "Firewall Management",
+    "Security Information",
     "Encryption Techniques",
     "Regulatory Compliance",
     "Vulnerability Assessment",
     "Cyber Threat Intelligence",
     "Risk Assessment & Management",
-    "Security Information & Event Management",
-    "Intrusion Detection & Prevention Systems",
   ];
 
   const interests = [
