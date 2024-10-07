@@ -9,32 +9,32 @@ import profilePicture from "../../../../public/assets/me.jpg";
 export default function About() {
   const skills = [
     "Network Security",
+    "Risk Assessment & Management",
     "Event Management",
+    "Cyber Threat Intelligence",
     "Security Auditing",
+    "Vulnerability Assessment",
     "Incident Response",
+    "Regulatory Compliance",
     "Prevention Systems",
+    "Encryption Techniques",
     "Intrusion Detection",
+    "Security Information",
     "Penetration Testing",
     "Firewall Management",
-    "Security Information",
-    "Encryption Techniques",
-    "Regulatory Compliance",
-    "Vulnerability Assessment",
-    "Cyber Threat Intelligence",
-    "Risk Assessment & Management",
   ];
 
   const interests = [
-    "Cybersecurity Trends",
-    "Ethical Hacking",
-    "Data Privacy",
     "Cryptography",
-    "Digital Forensics",
     "Blockchain Technology",
+    "Data Privacy",
+    "Cybersecurity Trends",
     "Cloud Security",
-    "Threat Hunting",
-    "Malware Analysis",
     "Security Automation",
+    "Threat Hunting",
+    "Digital Forensics",
+    "Ethical Hacking",
+    "Malware Analysis",
   ];
 
   const languages = ["English", "Hindi", "Marathi"];
@@ -264,4 +264,10 @@ const Item = styled.div`
       : theme.globalColors.lightGreenColor};
   clip-path: polygon(20px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 20px);
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 600px) {
+    height: 35px;
+    font-size: 16px;
+    line-height: 16px;
+  }
 `;
