@@ -33,7 +33,7 @@ export const SideMenu = ({ sideMenuOpened, setSideMenuOpened }) => {
 
   const routesData = [
     { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
+    // { path: "/about", label: "About" },
     { path: "/projects", label: "Projects" },
     { path: "/education", label: "Education" },
     { path: "/experience", label: "Experience" },

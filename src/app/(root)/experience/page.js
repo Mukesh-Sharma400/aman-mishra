@@ -4,22 +4,21 @@ import Image from "next/image";
 import styled from "styled-components";
 import BaseLayout from "@/app/components/BaseLayout";
 import { PageHeading } from "@/app/components/PageHeading";
+import bharatIntern from "../../../../public/assets/bharatintern.jpeg";
 
 export default function Experience() {
-  const experiencesData = [];
-
-  // const experiencesData = [
-  //   {
-  //     company: "Playerzpot Media Pvt Ltd",
-  //     imageSrc: profilePicture,
-  //     alt: "Playerzpot Media Pvt Ltd",
-  //     period: "May 2024 - Present",
-  //     role: "SDE 1 - Nodejs",
-  //     location: "Vashi",
-  //     content:
-  //       "As an SDE 1 - Node.js at Playerzpot Media Pvt Ltd, I am involved in backend development using Node.js. My responsibilities include designing and implementing APIs, optimizing server performance, and ensuring the reliability of server-side applications. I engage in code reviews, and contribute to improving our development processes.",
-  //   },
-  // ];
+  const experiencesData = [
+    {
+      company: "Bharat Intern",
+      imageSrc: bharatIntern,
+      alt: "Bharat Intern",
+      period: "April 2023 - May 2023",
+      role: "Web Developer Intern",
+      location: "Navi Mumbai",
+      content:
+        "Assisted in developing and maintaining website components, collaborated with the design team to enhance user interface features, and worked on optimizing web performance. Gained hands-on experience with JavaScript, HTML, CSS, and various front-end frameworks to create responsive web pages.",
+    },
+  ];
 
   return (
     <BaseLayout>
@@ -57,7 +56,6 @@ export default function Experience() {
 
 const DisplayWrapper = styled.div`
   width: 100%;
-  margin-top: 80px;
   transition: all 0.5s ease-in-out;
 `;
 
@@ -127,14 +125,14 @@ const CompanyImage = styled(Image)`
   left: 50%;
   transform: translate(-50%, -50%) !important;
   clip-path: polygon(
-    30% 0%,
-    70% 0%,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0% 70%,
-    0% 30%
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
   );
   padding: 5px;
   border: 2px solid

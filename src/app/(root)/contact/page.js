@@ -106,7 +106,6 @@ const ToastWrapper = styled.div`
 
 const DisplayWrapper = styled.div`
   width: 100%;
-  margin-top: 80px;
   transition: all 0.5s ease-in-out;
 `;
 

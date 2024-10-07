@@ -114,8 +114,6 @@ export default function About() {
 
 const DisplayWrapper = styled.div`
   width: 100%;
-  margin-top: 80px;
-  margin-bottom: 30px;
   transition: all 0.5s ease-in-out;
 `;
 

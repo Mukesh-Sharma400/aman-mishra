@@ -20,7 +20,7 @@ const DisplayWrapper = styled.div`
 
 const ContentWrapper = styled.div`
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 80px auto 30px;
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1100px) {
