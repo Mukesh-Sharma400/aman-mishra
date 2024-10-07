@@ -24,6 +24,6 @@ const ContentWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1100px) {
-    margin: 0 10px;
+    margin: 80px 10px 30px;
   }
 `;
