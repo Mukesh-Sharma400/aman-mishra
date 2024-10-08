@@ -11,6 +11,7 @@ import certificate2 from "../../../public/assets/certificate2.png";
 import certificate3 from "../../../public/assets/certificate3.png";
 import certificate4 from "../../../public/assets/certificate4.png";
 import certificate5 from "../../../public/assets/certificate5.png";
+import certificate6 from "../../../public/assets/certificate6.jpg";
 
 export default function Home() {
   const socials = [
@@ -42,9 +43,9 @@ export default function Home() {
 
   const certificates = [
     {
-      title: "RSTForum",
+      title: "RST Forum",
       imageSrc: certificate1,
-      alt: "RSTForum",
+      alt: "RST Forum",
       description:
         "Earned the Certified Ethical Hacker (CEH) certification, demonstrating proficiency in identifying vulnerabilities and understanding hacker methodologies to protect systems effectively.",
     },
@@ -75,6 +76,13 @@ export default function Home() {
       alt: "Pillai College of Arts, Commerce and Science",
       description:
         "Completed the 'Cybersecurity and Digital Forensics' course, learning about cybersecurity principles, threat analysis, and digital forensics for investigating cyber incidents.",
+    },
+    {
+      title: "Techgen",
+      imageSrc: certificate6,
+      alt: "Techgen",
+      description:
+        "Completed the 'Computer Hardware and Networking Foundation' course, covering hardware components, networking basics, and troubleshooting.",
     },
   ];
 
