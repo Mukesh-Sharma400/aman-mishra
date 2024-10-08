@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
 import styled from "styled-components";
 import BaseLayout from "@/app/components/BaseLayout";
 import profilePicture from "../../../public/assets/me.jpg";
@@ -11,6 +13,45 @@ import certificate4 from "../../../public/assets/certificate4.png";
 import certificate5 from "../../../public/assets/certificate5.png";
 
 export default function Home() {
+  const socials = [
+    {
+      className: "bi bi-github",
+      href: "https://github.com/Mukesh-Sharma400",
+      tooltip: "GitHub",
+      ariaLabel: "GitHub",
+    },
+    {
+      className: "bi bi-linkedin",
+      href: "https://www.linkedin.com/in/mukesh-sharma-dev",
+      tooltip: "LinkedIn",
+      ariaLabel: "LinkedIn",
+    },
+    {
+      className: "bi bi-twitter-x",
+      href: "https://twitter.com/mukesh_sharma36",
+      tooltip: "Twitter / X",
+      ariaLabel: "Twitter / X",
+    },
+    {
+      className: "bi bi-facebook",
+      href: "https://www.facebook.com/MukeshSharma400",
+      tooltip: "Facebook",
+      ariaLabel: "Facebook",
+    },
+    {
+      className: "bi bi-instagram",
+      href: "https://www.instagram.com/mukesh_sharma400",
+      tooltip: "Instagram",
+      ariaLabel: "Instagram",
+    },
+    {
+      className: "bi bi-threads",
+      href: "https://www.threads.net/mukesh_sharma400",
+      tooltip: "Threads",
+      ariaLabel: "Threads",
+    },
+  ];
+
   const certificates = [
     {
       title: "RSTForum",
@@ -72,6 +113,15 @@ export default function Home() {
 
   const languages = ["English", "Hindi", "Marathi"];
 
+  useEffect(() => {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
+      return new window.bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }, []);
+
   return (
     <BaseLayout>
       <DisplayWrapper>
@@ -93,6 +143,22 @@ export default function Home() {
               security solutions. I'm committed to staying ahead of emerging
               threats and contributing to a more secure digital landscape.
             </MyStory>
+            <SocialsWrapper>
+              {socials.map((link, index) => (
+                <Social
+                  key={index}
+                  className={link.className}
+                  href={link.href}
+                  target="_blank"
+                  data-bs-toggle="tooltip"
+                  data-bs-title={link.tooltip}
+                  data-bs-custom-class="custom-tooltip"
+                  aria-label={link.ariaLabel}
+                  data-aos="fade-right"
+                  data-aos-delay={`${(index + 1) * 100}`}
+                ></Social>
+              ))}
+            </SocialsWrapper>
           </DetailsWrapper>
           <ImageWrapper>
             <ProfilePicture
@@ -229,6 +295,48 @@ const MyStory = styled.p`
       theme.currentTheme === "dark"
         ? theme.globalColors.mediumGreenColor
         : theme.globalColors.mediumGreenColor};
+  }
+`;
+
+const SocialsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const Social = styled(Link)`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 50%;
+  background-color: #0f1c1e;
+  color: ${({ theme }) =>
+    theme.currentTheme === "dark"
+      ? theme.globalColors.mediumGreenColor
+      : theme.globalColors.mediumGreenColor};
+  border: 1px solid
+    ${({ theme }) =>
+      theme.currentTheme === "dark"
+        ? theme.globalColors.mediumGreenColor
+        : theme.globalColors.mediumGreenColor} !important;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) =>
+      theme.currentTheme === "dark"
+        ? theme.globalColors.lightGreenColor
+        : theme.globalColors.lightGreenColor};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.currentTheme === "dark"
+          ? theme.globalColors.lightGreenColor
+          : theme.globalColors.lightGreenColor} !important;
   }
 `;
 
