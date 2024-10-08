@@ -56,6 +56,13 @@ export default function Reviews() {
       post: "Full Stack Developer",
       rating: 5,
     },
+    {
+      message:
+        "Aman is a passionate tech enthusiast whose curiosity and creativity inspire those around him. His collaborative spirit and problem-solving abilities make him a valuable asset to any team.",
+      name: "Hrithik Shah",
+      post: "Networking Engineer",
+      rating: 5,
+    },
   ];
 
   const renderStars = (rating) => {
