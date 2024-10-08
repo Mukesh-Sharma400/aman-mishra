@@ -16,39 +16,21 @@ export default function Home() {
   const socials = [
     {
       className: "bi bi-github",
-      href: "https://github.com/Mukesh-Sharma400",
+      href: "https://github.com/AmanMishra107",
       tooltip: "GitHub",
       ariaLabel: "GitHub",
     },
     {
       className: "bi bi-linkedin",
-      href: "https://www.linkedin.com/in/mukesh-sharma-dev",
+      href: "https://www.linkedin.com/in/amanmishra107",
       tooltip: "LinkedIn",
       ariaLabel: "LinkedIn",
     },
     {
-      className: "bi bi-twitter-x",
-      href: "https://twitter.com/mukesh_sharma36",
-      tooltip: "Twitter / X",
-      ariaLabel: "Twitter / X",
-    },
-    {
-      className: "bi bi-facebook",
-      href: "https://www.facebook.com/MukeshSharma400",
-      tooltip: "Facebook",
-      ariaLabel: "Facebook",
-    },
-    {
       className: "bi bi-instagram",
-      href: "https://www.instagram.com/mukesh_sharma400",
+      href: "https://www.instagram.com/aman.mishra__107",
       tooltip: "Instagram",
       ariaLabel: "Instagram",
-    },
-    {
-      className: "bi bi-threads",
-      href: "https://www.threads.net/mukesh_sharma400",
-      tooltip: "Threads",
-      ariaLabel: "Threads",
     },
   ];
 
