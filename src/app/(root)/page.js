@@ -50,33 +50,24 @@ export default function Home() {
   ];
 
   const skills = [
+    "HTML",
+    "CSS",
+    "Python",
+    "SQL",
+    "Kali Linux",
+    "Virtual Machine",
     "Network Security",
-    "Risk Assessment & Management",
-    "Event Management",
-    "Cyber Threat Intelligence",
-    "Security Auditing",
     "Vulnerability Assessment",
-    "Incident Response",
-    "Regulatory Compliance",
-    "Prevention Systems",
-    "Encryption Techniques",
-    "Intrusion Detection",
-    "Security Information",
-    "Penetration Testing",
-    "Firewall Management",
+    "Ethical Hacking",
   ];
 
   const interests = [
-    "Cryptography",
-    "Blockchain Technology",
-    "Data Privacy",
-    "Cybersecurity Trends",
-    "Cloud Security",
-    "Security Automation",
-    "Threat Hunting",
-    "Digital Forensics",
-    "Ethical Hacking",
-    "Malware Analysis",
+    "Coding",
+    "Sketching",
+    "Musical Instruments",
+    "Cricket",
+    "Gaming",
+    "Traveling",
   ];
 
   const languages = ["English", "Hindi", "Marathi"];
