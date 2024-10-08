@@ -9,50 +9,51 @@ export default function Reviews() {
   const reviewsData = [
     {
       message:
-        "Completed the hack flawlessly, within the allotted time and resources. ShadowFox is a pro at understanding complex systems and provided valuable insights. Highly recommended for any covert ops!",
-      name: "ZeroCool",
+        "I’ve known Aman for years, and his expertise in cybersecurity never ceases to amaze me. From programming keyloggers in Python to performing detailed Windows security assessments, he’s always at the top of his game. He approaches every task with precision and a passion for learning, making him a fantastic collaborator on any project.",
+      name: "Nikhil Messa",
+      post: "Cybsecurity Analyst",
       rating: 5,
     },
     {
       message:
-        "I hired BlackHat for a high-stakes exploit, and I must say their skills are unparalleled. The best part is their calm demeanor under pressure and impeccable execution. If you need someone with serious skills, look no further.",
-      name: "PhantomX",
+        "Aman’s skills in ethical hacking and cybersecurity are unmatched. He’s incredibly knowledgeable about network security, penetration testing, and even advanced topics like session hijacking and malware threats. What stands out is his ability to explain complex concepts in simple terms and provide efficient solutions. It’s always a pleasure to work with someone so dedicated.",
+      name: "Aditya Rawat",
+      post: "Ethical Hacker",
       rating: 5,
     },
     {
       message:
-        "We had an incredible experience working with NullByte. They cracked into a high-security system for us, and the precision with which they worked was remarkable. Would recommend them for any top-tier hack!",
-      name: "Cypher",
+        "Aman was a standout during the Certified Ethical Hacking course at RST Forum. He quickly grasped advanced topics like penetration testing, web application hacking, and session hijacking. His practical approach to solving complex cybersecurity challenges was impressive. Aman’s dedication and enthusiasm for ethical hacking were evident in every project he worked on.",
+      name: "Pragya Shinde",
+      post: "RST Forum Professor",
       rating: 5,
     },
     {
       message:
-        "Got my system breach done seamlessly thanks to Ghost. A skilled and reliable operator—I'd definitely work with them again on future missions.",
-      name: "RootKit",
+        "Aman did an incredible job during his web development internship at Bharat Intern, especially with the Netflix clone project. He showed strong skills in HTML and CSS, creating a sleek and responsive design. His attention to detail and creativity really brought the project to life, making the user interface both functional and visually appealing.",
+      name: "Prajwal Kolure",
+      post: "Bharat Intern",
       rating: 5,
     },
     {
       message:
-        "Top-notch crew and lightning-fast response. Rates are surprisingly reasonable for the level of expertise they bring. Keep up the great work!",
-      name: "CodeBreaker",
+        "Aman was a dedicated and talented intern during his time at Bharat Intern. He showcased his proficiency in HTML and CSS, quickly grasping new concepts and applying them effectively. His positive attitude, teamwork, and commitment to delivering high-quality work were greatly appreciated by the entire team.",
+      name: "Bharat Intern",
+      post: "Bharat Intern",
       rating: 5,
     },
     {
       message:
-        "Mind-blowing penetration test! The way they mapped vulnerabilities and exploited them made my system more secure than ever. Couldn’t ask for better results.",
-      name: "DarkKnight",
+        "Aman is an absolute tech wizard! His skills in Python, SQL, HTML, and CSS are impressive, and he tackles every project with enthusiasm. I’ve seen him work with cybersecurity tools like Wireshark and Metasploit, and his problem-solving skills always shine through. Plus, he’s super approachable and always willing to lend a hand. Anyone would be lucky to have him on their team!",
+      name: "Mayur Kale",
+      post: "Server Operator",
       rating: 5,
     },
     {
       message:
-        "Expert hacker with on-time delivery. Professional, discreet, and highly effective. Would absolutely recommend for sensitive projects.",
-      name: "SilentShadow",
-      rating: 5,
-    },
-    {
-      message:
-        "Delivered the job right on time, exactly how I envisioned. Exceptional experience, very skilled in stealth and precision!",
-      name: "RedPhantom",
+        "Aman is a passionate and driven individual who truly loves technology. His positive attitude and eagerness to learn make him a pleasure to work with. He has strong problem-solving skills and always shares his knowledge with others. Aman fosters a collaborative spirit that inspires everyone around him.",
+      name: "Ravi Patil",
+      post: "Full Stack Developer",
       rating: 5,
     },
   ];
@@ -84,7 +85,9 @@ export default function Reviews() {
                     <Message>{review.message}</Message>
                     <PicNameWrapper>
                       <div>
-                        <Name>- {review.name}</Name>
+                        <Name>
+                          - {review.name} ({review.post})
+                        </Name>
                         <Ratings>{renderStars(review.rating)}</Ratings>
                       </div>
                     </PicNameWrapper>

@@ -56,18 +56,18 @@ export default function Home() {
     "SQL",
     "Kali Linux",
     "Virtual Machine",
+    "Ethical Hacking",
     "Network Security",
     "Vulnerability Assessment",
-    "Ethical Hacking",
   ];
 
   const interests = [
     "Coding",
+    "Gaming",
+    "Cricket",
+    "Traveling",
     "Sketching",
     "Musical Instruments",
-    "Cricket",
-    "Gaming",
-    "Traveling",
   ];
 
   const languages = ["English", "Hindi", "Marathi"];
