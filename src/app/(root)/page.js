@@ -27,6 +27,12 @@ export default function Home() {
       ariaLabel: "LinkedIn",
     },
     {
+      className: "bi bi-twitter-x",
+      href: "https://twitter.com/AmanMishra107",
+      tooltip: "Twitter / X",
+      ariaLabel: "Twitter / X",
+    },
+    {
       className: "bi bi-instagram",
       href: "https://www.instagram.com/aman.mishra__107",
       tooltip: "Instagram",
